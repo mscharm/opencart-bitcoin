@@ -22,7 +22,7 @@ REQUIREMENTS
 INSTALL  
 
 1. Copy all files from the upload directory into the root of your store  
-2. Create a new system currency and change it code to BTC  
+2. Create a new system currency and change its code to BTC  
 3. Install, configure and activate the BitCoin module  
 
 DONATE  
