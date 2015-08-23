@@ -21,7 +21,7 @@ REQUIREMENTS
 
 INSTALL  
 
-1. Copy all files from the upload directory into to the root of your store  
+1. Copy all files from the upload directory into the root of your store  
 2. Install, configure and activate the BitCoin module  
 3. Enjoy!  
 
