@@ -25,10 +25,6 @@ INSTALL
 2. Create a new system currency and change its code to BTC  
 3. Install, configure and activate the BitCoin module  
 
-DONATE  
-
-BTC: 1HdK2ppceaMvJSZqwEnQcpVaSe2xX3HYEa  
-
 CENTRALIZED USAGE
 
 This module can be used with blockchain.info. No need to setup bitcoind on another server.  
@@ -47,4 +43,8 @@ Geo Zone: All Zones
 Status: Enabled  
 Sort Order: 0  
 
-If this method works for you please donate to BTC: 1HABcPRvwdnA1yAGTd9ukpLk82Zaei1yV3
+If this method works for you please donate to BTC: 1HABcPRvwdnA1yAGTd9ukpLk82Zaei1yV3  
+
+PROJECT DONATE  
+
+BTC: 1HdK2ppceaMvJSZqwEnQcpVaSe2xX3HYEa  
