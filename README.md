@@ -27,14 +27,13 @@ INSTALL
 
 DONATE  
 
-BTC: 1HdK2ppceaMvJSZqwEnQcpVaSe2xX3HYEa
+BTC: 1HdK2ppceaMvJSZqwEnQcpVaSe2xX3HYEa  
 
 CENTRALIZED USAGE
 
 This module can be used with blockchain.info. No need to setup bitcoind on another server.  
 Simply open a bitcoin wallet at blockchain.info and enter the following details into the module setup:  
 
-------------------------------------------------------------------------------------------  
 RPC Host: rpc.blockchain.info  
 RPC Port: 80  
 RPC Path: (leave blank)  
@@ -47,6 +46,5 @@ Order Status: Processing
 Geo Zone: All Zones  
 Status: Enabled  
 Sort Order: 0  
-------------------------------------------------------------------------------------------  
 
 If this method works for you please donate to BTC: 1HABcPRvwdnA1yAGTd9ukpLk82Zaei1yV3
