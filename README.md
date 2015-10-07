@@ -31,7 +31,7 @@ This module can be used with blockchain.info. No need to setup bitcoind on anoth
 Simply open a bitcoin wallet at blockchain.info and enter the following details into the module setup:  
 
 RPC Host: rpc.blockchain.info  
-RPC Port: 80  
+RPC Port: 443  
 RPC Path: (leave blank)  
 RPC User: Your wallet Identifier (ex: a69f2er8-b601-6et2-91d1-j2dffff08giu)  
 RPC Password: Your blockchain.info wallet password  
