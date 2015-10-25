@@ -43,6 +43,7 @@ Geo Zone: All Zones
 Status: Enabled  
 Sort Order: 0  
 
+Don't forget to add your server IP to the whitelist and enable API access in the blockchain.info wallet settings.  
 If this method works for you please donate to BTC: 1HABcPRvwdnA1yAGTd9ukpLk82Zaei1yV3  
 
 PROJECT DONATE  
