@@ -18,7 +18,6 @@ class ModelPaymentBitCoin extends Model {
     public function getMethod($address, $total) {
 
         // Load dependencies
-        $this->load->library('bitcoin');
         $this->load->language('payment/bitcoin');
 
         // Connect to the server

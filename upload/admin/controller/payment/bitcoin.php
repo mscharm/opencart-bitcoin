@@ -157,9 +157,6 @@ class ControllerPaymentBitCoin extends Controller {
 
     protected function validate() {
 
-        // Load dependencies
-        $this->load->library('bitcoin');
-
         // Check permissions
         if (!$this->user->hasPermission('modify', 'payment/bitcoin')) {
             $this->error['warning'] = $this->language->get('error_permission');
