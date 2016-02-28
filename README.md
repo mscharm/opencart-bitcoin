@@ -1,6 +1,6 @@
 BitCoin Payment Method for OpenCart
 
-Decentralized BitCoin payment method for OpenCart v2.0+ that works with bitcoind via RPC.
+Decentralized BitCoin payment method for OpenCart 1.5 that works with bitcoind via RPC.
 
 FEATURES  
 

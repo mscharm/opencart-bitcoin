@@ -14,125 +14,78 @@
  ?>
 
 <?php echo $header; ?>
-<?php echo $column_left; ?>
 <div id="content">
-  <div class="page-header">
-    <div class="container-fluid">
-      <div class="pull-right">
-        <button type="submit" form="form-bitcoin" data-toggle="tooltip" title="<?php echo $button_save; ?>" class="btn btn-primary"><i class="fa fa-save"></i></button>
-        <a href="<?php echo $cancel; ?>" data-toggle="tooltip" title="<?php echo $button_cancel; ?>" class="btn btn-default"><i class="fa fa-reply"></i></a>
-      </div>
-      <h1><?php echo $heading_title; ?></h1>
-      <ul class="breadcrumb">
-        <?php foreach ($breadcrumbs as $breadcrumb) { ?>
-        <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
-        <?php } ?>
-      </ul>
-    </div>
-  </div>
-  <div class="container-fluid">
-    <?php if ($error_warning) { ?>
-    <div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> <?php echo $error_warning; ?>
-      <button type="button" class="close" data-dismiss="alert">&times;</button>
-    </div>
+  <div class="breadcrumb">
+    <?php foreach ($breadcrumbs as $breadcrumb) { ?>
+    <?php echo $breadcrumb['separator']; ?><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>
     <?php } ?>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title"><i class="fa fa-pencil"></i> <?php echo $text_edit; ?></h3>
-      </div>
-      <div class="panel-body">
-        <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" id="form-bitcoin" class="form-horizontal">
-
-          <div class="form-group">
-            <label class="col-sm-2 control-label" for="input-host">
-              <span data-toggle="tooltip" title="<?php echo $help_host; ?>"><?php echo $entry_host; ?></span>
-            </label>
-            <div class="col-sm-10">
-              <input type="text" name="bitcoin_host" value="<?php echo $bitcoin_host; ?>" placeholder="<?php echo $entry_host; ?>" id="input-host" class="form-control" />
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="col-sm-2 control-label" for="input-port">
-              <span data-toggle="tooltip" title="<?php echo $help_port; ?>"><?php echo $entry_port; ?></span>
-            </label>
-            <div class="col-sm-10">
-              <input type="text" name="bitcoin_port" value="<?php echo $bitcoin_port; ?>" placeholder="<?php echo $entry_port; ?>" id="input-port" class="form-control" />
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="col-sm-2 control-label" for="input-path">
-              <span data-toggle="tooltip" title="<?php echo $help_path; ?>"><?php echo $entry_path; ?></span>
-            </label>
-            <div class="col-sm-10">
-              <input type="text" name="bitcoin_path" value="<?php echo $bitcoin_path; ?>" placeholder="<?php echo $entry_path; ?>" id="input-path" class="form-control" />
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="col-sm-2 control-label" for="input-user">
-              <span data-toggle="tooltip" title="<?php echo $help_user; ?>"><?php echo $entry_user; ?></span>
-            </label>
-            <div class="col-sm-10">
-              <input type="text" name="bitcoin_user" value="<?php echo $bitcoin_user; ?>" placeholder="<?php echo $entry_user; ?>" id="input-user" class="form-control" />
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="col-sm-2 control-label" for="input-password">
-              <span data-toggle="tooltip" title="<?php echo $help_password; ?>"><?php echo $entry_password; ?></span>
-            </label>
-            <div class="col-sm-10">
-              <input type="password" name="bitcoin_password" value="<?php echo $bitcoin_password; ?>" placeholder="<?php echo $entry_password; ?>" id="input-password" class="form-control" />
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="col-sm-2 control-label" for="input-currency-id">
-              <span data-toggle="tooltip" title="<?php echo $help_currency; ?>"><?php echo $entry_currency; ?></span>
-            </label>
-            <div class="col-sm-10">
-              <select name="bitcoin_currency" id="input-currency-id" class="form-control">
+  </div>
+  <?php if ($error_warning) { ?>
+  <div class="warning"><?php echo $error_warning; ?></div>
+  <?php } ?>
+  <div class="box">
+    <div class="heading">
+      <h1><img src="view/image/payment.png" alt="" /> <?php echo $heading_title; ?></h1>
+      <div class="buttons"><a onclick="$('#form').submit();" class="button"><?php echo $button_save; ?></a><a onclick="location = '<?php echo $cancel; ?>';" class="button"><?php echo $button_cancel; ?></a></div>
+    </div>
+    <div class="content">
+      <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" id="form">
+        <table class="form">
+          <tr>
+            <td><?php echo $entry_host; ?></td>
+            <td><input type="text" name="bitcoin_host" value="<?php echo $bitcoin_host; ?>" placeholder="<?php echo $entry_host; ?>" /></td>
+          </tr>
+          <tr>
+            <td><?php echo $entry_port; ?></td>
+            <td><input type="text" name="bitcoin_port" value="<?php echo $bitcoin_port; ?>" placeholder="<?php echo $entry_port; ?>" /></td>
+          </tr>
+          <tr>
+            <td><?php echo $entry_path; ?></td>
+            <td><input type="text" name="bitcoin_path" value="<?php echo $bitcoin_path; ?>" placeholder="<?php echo $entry_path; ?>" /></td>
+          </tr>
+          <tr>
+            <td><?php echo $entry_user; ?></td>
+            <td><input type="text" name="bitcoin_user" value="<?php echo $bitcoin_user; ?>" placeholder="<?php echo $entry_user; ?>" /></td>
+          </tr>
+          <tr>
+            <td><?php echo $entry_password; ?></td>
+            <td><input type="password" name="bitcoin_password" value="<?php echo $bitcoin_password; ?>" placeholder="<?php echo $entry_password; ?>" /></td>
+          </tr>
+          <tr>
+            <td><?php echo $entry_currency; ?></td>
+            <td>
+              <select name="bitcoin_currency">
                 <?php foreach ($currencies as $currency) { ?>
                 <?php if ($bitcoin_currency == $currency['code']) { ?>
-                  <option value="<?php echo $currency['code']; ?>" selected="selected"><?php echo $currency['title']; ?></option>
+                <option value="<?php echo $currency['code']; ?>" selected="selected"><?php echo $currency['title']; ?></option>
                 <?php } else { ?>
-                  <option value="<?php echo $currency['code']; ?>"><?php echo $currency['title']; ?></option>
+                <option value="<?php echo $currency['code']; ?>"><?php echo $currency['title']; ?></option>
                 <?php } ?>
                 <?php } ?>
               </select>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="col-sm-2 control-label" for="input-qr">
-              <span data-toggle="tooltip" title="<?php echo $help_qr; ?>"><?php echo $entry_qr; ?></span>
-            </label>
-            <div class="col-sm-10">
-              <select name="bitcoin_qr" id="input-input-qr" class="form-control">
+            </td>
+          </tr>
+          <tr>
+            <td><?php echo $entry_qr; ?></td>
+            <td>
+              <select name="bitcoin_qr">
                 <option value="0"><?php echo $text_disabled; ?></option>
                 <?php if ($bitcoin_qr == 'google') { ?>
-                  <option value="google" selected="selected"><?php echo $text_google_api; ?></option>
+                <option value="google" selected="selected"><?php echo $text_google_api; ?></option>
                 <?php } else { ?>
-                  <option value="google"><?php echo $text_google_api; ?></option>
+                <option value="google"><?php echo $text_google_api; ?></option>
                 <?php } ?>
               </select>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="col-sm-2 control-label" for="input-total">
-              <span data-toggle="tooltip" title="<?php echo $help_total; ?>"><?php echo $entry_total; ?></span>
-            </label>
-            <div class="col-sm-10">
-              <input type="text" name="bitcoin_total" value="<?php echo $bitcoin_total; ?>" placeholder="<?php echo $entry_total; ?>" id="input-total" class="form-control" />
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-sm-2 control-label" for="input-order-status"><?php echo $entry_order_status; ?></label>
-            <div class="col-sm-10">
-              <select name="bitcoin_order_status_id" id="input-order-status" class="form-control">
+            </td>
+          </tr>
+          <tr>
+            <td><?php echo $entry_total; ?></td>
+            <td><input type="text" name="bitcoin_total" value="<?php echo $bitcoin_total; ?>" placeholder="<?php echo $entry_total; ?>" /></td>
+          </tr>
+          <tr>
+            <td><?php echo $entry_order_status; ?></td>
+            <td>
+              <select name="bitcoin_order_status_id">
                 <?php foreach ($order_statuses as $order_status) { ?>
                 <?php if ($order_status['order_status_id'] == $bitcoin_order_status_id) { ?>
                 <option value="<?php echo $order_status['order_status_id']; ?>" selected="selected"><?php echo $order_status['name']; ?></option>
@@ -141,11 +94,11 @@
                 <?php } ?>
                 <?php } ?>
               </select>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-sm-2 control-label" for="input-geo-zone"><?php echo $entry_geo_zone; ?></label>
-            <div class="col-sm-10">
+            </td>
+          </tr>
+          <tr>
+            <td><?php echo $entry_geo_zone; ?></td>
+            <td>
               <select name="bitcoin_geo_zone_id" id="input-geo-zone" class="form-control">
                 <option value="0"><?php echo $text_all_zones; ?></option>
                 <?php foreach ($geo_zones as $geo_zone) { ?>
@@ -156,11 +109,11 @@
                 <?php } ?>
                 <?php } ?>
               </select>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-sm-2 control-label" for="input-status"><?php echo $entry_status; ?></label>
-            <div class="col-sm-10">
+            </td>
+          </tr>
+          <tr>
+            <td><?php echo $entry_status; ?></td>
+            <td>
               <select name="bitcoin_status" id="input-status" class="form-control">
                 <?php if ($bitcoin_status) { ?>
                 <option value="1" selected="selected"><?php echo $text_enabled; ?></option>
@@ -170,18 +123,20 @@
                 <option value="0" selected="selected"><?php echo $text_disabled; ?></option>
                 <?php } ?>
               </select>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-sm-2 control-label" for="input-sort-order"><?php echo $entry_sort_order; ?></label>
-            <div class="col-sm-10">
-              <input type="text" name="bitcoin_sort_order" value="<?php echo $bitcoin_sort_order; ?>" placeholder="<?php echo $entry_sort_order; ?>" id="input-sort-order" class="form-control" />
-            </div>
-          </div>
-        </form>
-      </div>
+            </td>
+          </tr>
+          <tr>
+            <td><?php echo $entry_sort_order; ?></td>
+            <td><input type="text" name="bitcoin_sort_order" value="<?php echo $bitcoin_sort_order; ?>" placeholder="<?php echo $entry_sort_order; ?>" /></td>
+          </tr>
+        </table>
+      </form>
     </div>
-    <div style="text-align:center"><?php echo $text_copyright; ?></div>
   </div>
 </div>
+
+<div style="text-align:center"><?php echo $text_copyright; ?></div>
 <?php echo $footer; ?>
+
+
+
