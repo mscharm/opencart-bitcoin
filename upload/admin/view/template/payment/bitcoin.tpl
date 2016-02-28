@@ -95,7 +95,7 @@
             <div class="col-sm-10">
               <select name="bitcoin_currency" id="input-currency-id" class="form-control">
                 <?php foreach ($currencies as $currency) { ?>
-                <?php if ($bitcoin_currency == $currency) { ?>
+                <?php if ($bitcoin_currency == $currency['code']) { ?>
                   <option value="<?php echo $currency['code']; ?>" selected="selected"><?php echo $currency['title']; ?></option>
                 <?php } else { ?>
                   <option value="<?php echo $currency['code']; ?>"><?php echo $currency['title']; ?></option>
