@@ -59,8 +59,8 @@ final class BitCoin {
      * @param string $url
      */
     function __construct($username, $password, $host = 'localhost', $port = 8332, $url = null) {
-        $this->username      = $username;
-        $this->password      = $password;
+        $this->username      = html_entity_decode($username);
+        $this->password      = html_entity_decode($password);
         $this->host          = $host;
         $this->port          = $port;
         $this->url           = $url;
@@ -99,8 +99,10 @@ final class BitCoin {
         ));
 
         // Build the cURL session
-        $curl    = curl_init("{$this->proto}://{$this->username}:{$this->password}@{$this->host}:{$this->port}/{$this->url}");
+        $curl    = curl_init("{$this->proto}://{$this->host}:{$this->port}/{$this->url}");
         $options = array(
+            CURLOPT_HTTPAUTH       => CURLAUTH_BASIC,
+            CURLOPT_USERPWD        => $this->username . ':' . $this->password,
             CURLOPT_RETURNTRANSFER => TRUE,
             CURLOPT_FOLLOWLOCATION => TRUE,
             CURLOPT_MAXREDIRS      => 10,
