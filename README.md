@@ -4,8 +4,8 @@ Decentralized BitCoin payment method for OpenCart 2.1 that works with bitcoind v
 
 **OLDER VERSIONS**
 
-[OpenCart 2.0](https://github.com/shaman/opencart-bitcoin/tree/opencart-2.0)
-[OpenCart 1.5](https://github.com/shaman/opencart-bitcoin/tree/opencart-1.5)
+[OpenCart 2.0](https://github.com/shaman/opencart-bitcoin/tree/opencart-2.0)  
+[OpenCart 1.5](https://github.com/shaman/opencart-bitcoin/tree/opencart-1.5)  
 
 **FEATURES**  
 
