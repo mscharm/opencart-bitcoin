@@ -98,4 +98,20 @@ class ControllerPaymentBitCoin extends Controller {
             );
         }
     }
+
+    public function update() {
+
+        $this->load->model('checkout/order');
+        $this->load->model('payment/bitcoin');
+
+        foreach ($this->model_payment_bitcoin->getOrdersByStatus($this->config->get('bitcoin_order_status_id')) as $order) {
+
+            $confirmed = (float) $this->_bitcoin->getreceivedbyaccount((string) $order['order_id'], $this->config->get('bitcoin_min_confirmations'));
+            $total     = (float) $this->currency->format($order['total'], $this->config->get('bitcoin_currency'), '', false);
+
+            if ($confirmed >= $total) {
+                $this->model_checkout_order->addOrderHistory($order['order_id'], $this->config->get('bitcoin_confirmed_order_status_id'));
+            }
+        }
+    }
 }

@@ -120,7 +120,6 @@
               </select>
             </div>
           </div>
-
           <div class="form-group">
             <label class="col-sm-2 control-label" for="input-total">
               <span data-toggle="tooltip" title="<?php echo $help_total; ?>"><?php echo $entry_total; ?></span>
@@ -130,11 +129,33 @@
             </div>
           </div>
           <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-total">
+              <span><?php echo $entry_min_confirmations; ?></span>
+            </label>
+            <div class="col-sm-10">
+              <input type="text" name="bitcoin_min_confirmations" value="<?php echo $bitcoin_min_confirmations; ?>" placeholder="<?php echo $entry_min_confirmations; ?>" id="input-total" class="form-control" />
+            </div>
+          </div>
+          <div class="form-group">
             <label class="col-sm-2 control-label" for="input-order-status"><?php echo $entry_order_status; ?></label>
             <div class="col-sm-10">
               <select name="bitcoin_order_status_id" id="input-order-status" class="form-control">
                 <?php foreach ($order_statuses as $order_status) { ?>
                 <?php if ($order_status['order_status_id'] == $bitcoin_order_status_id) { ?>
+                <option value="<?php echo $order_status['order_status_id']; ?>" selected="selected"><?php echo $order_status['name']; ?></option>
+                <?php } else { ?>
+                <option value="<?php echo $order_status['order_status_id']; ?>"><?php echo $order_status['name']; ?></option>
+                <?php } ?>
+                <?php } ?>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-order-status"><?php echo $entry_confirmed_order_status; ?></label>
+            <div class="col-sm-10">
+              <select name="bitcoin_confirmed_order_status_id" id="input-order-status" class="form-control">
+                <?php foreach ($order_statuses as $order_status) { ?>
+                <?php if ($order_status['order_status_id'] == $bitcoin_confirmed_order_status_id) { ?>
                 <option value="<?php echo $order_status['order_status_id']; ?>" selected="selected"><?php echo $order_status['name']; ?></option>
                 <?php } else { ?>
                 <option value="<?php echo $order_status['order_status_id']; ?>"><?php echo $order_status['name']; ?></option>

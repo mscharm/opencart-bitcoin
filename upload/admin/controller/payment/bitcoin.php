@@ -127,6 +127,18 @@ class ControllerPaymentBitCoin extends Controller {
             $data['bitcoin_order_status_id'] = $this->config->get('bitcoin_order_status_id');
         }
 
+        if (isset($this->request->post['bitcoin_confirmed_order_status_id'])) {
+            $data['bitcoin_confirmed_order_status_id'] = $this->request->post['bitcoin_confirmed_order_status_id'];
+        } else {
+            $data['bitcoin_confirmed_order_status_id'] = $this->config->get('bitcoin_confirmed_order_status_id');
+        }
+
+        if (isset($this->request->post['bitcoin_min_confirmations'])) {
+            $data['bitcoin_min_confirmations'] = $this->request->post['bitcoin_min_confirmations'];
+        } else {
+            $data['bitcoin_min_confirmations'] = $this->config->get('bitcoin_min_confirmations');
+        }
+
         if (isset($this->request->post['bitcoin_geo_zone_id'])) {
             $data['bitcoin_geo_zone_id'] = $this->request->post['bitcoin_geo_zone_id'];
         } else {

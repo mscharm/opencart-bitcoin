@@ -70,4 +70,15 @@ class ModelPaymentBitCoin extends Model {
 
         return $method_data;
     }
+
+    public function getOrdersByStatus($order_status_id) {
+
+        $order_query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "order` WHERE order_status_id = '" . (int) $order_status_id . "' AND payment_code = 'bitcoin'");
+
+        if ($order_query->num_rows) {
+            return $order_query->rows;
+        } else {
+            return array();
+        }
+    }
 }
