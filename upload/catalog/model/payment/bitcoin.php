@@ -62,7 +62,10 @@ class ModelPaymentBitCoin extends Model {
         if ($status) {
             $method_data = array(
                 'code'       => 'bitcoin',
-                'title'      => $this->language->get('text_title'),
+                'title'      => $this->config->get('bitcoin_currency') == $this->currency->getCode() ? $this->language->get('text_title') : sprintf($this->language->get('text_title_disabled'),
+                                                                                                                                                    $this->url->link('common/currency/currency'),
+                                                                                                                                                    $this->config->get('bitcoin_currency'),
+                                                                                                                                                    $this->url->link('checkout/checkout')),
                 'terms'      => '',
                 'sort_order' => $this->config->get('bitcoin_sort_order')
             );
