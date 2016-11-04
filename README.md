@@ -59,8 +59,8 @@ Simply open a bitcoin wallet at blockchain.info and enter the following details 
 
 [Electrum Payment Method for OpenCart](https://github.com/shaman/opencart-electrum)
 
-**DONATE**
+**DONATE BTC**
 
-    1HdK2ppceaMvJSZqwEnQcpVaSe2xX3HYEa  
+    1Mh9TQEg3x29y3nuUeRyXxbUvBdvrsoTNz  
     
     
