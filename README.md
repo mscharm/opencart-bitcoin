@@ -46,6 +46,6 @@ Sort Order: 0
 Don't forget to add your server IP to the whitelist and enable API access in the blockchain.info wallet settings.  
 If this method works for you please donate to BTC: 1HABcPRvwdnA1yAGTd9ukpLk82Zaei1yV3  
 
-PROJECT DONATE  
+**DONATE BTC**
 
-BTC: 1HdK2ppceaMvJSZqwEnQcpVaSe2xX3HYEa  
+    1Mh9TQEg3x29y3nuUeRyXxbUvBdvrsoTNz  
